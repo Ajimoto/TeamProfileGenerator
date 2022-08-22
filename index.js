@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const Engineer = require('../lib/Engineer');
-const Intern = require('../lib/Intern');
-const Manager = require('../lib/Manager');
-const generateHtml = require('../util/generateHtml');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+const generateHtml = require('./util/generateHtml');
 const fs = require('fs');
 //empty array to store the team into
 const team = [];
@@ -155,7 +155,7 @@ async function newOrSendit() {
 	} else if (newOrHTML.addOrMakeHTML === 'Make HTML') {
 		const html = generateHtml(team);
 
-		fs.writeFile('../assets/index.html', html, (err) => {
+		fs.writeFile('assets/index.html', html, (err) => {
 			if (err) {
 				console.log(err);
 			}
